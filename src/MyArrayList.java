@@ -13,6 +13,14 @@ public class MyArrayList<T> {
         arr[size++] = element;
     }
 
+    public boolean contains(Object o) {
+        for (int i = 0; i < size; i++) {
+            if (arr[i] == o) {
+                return true;
+            }
+        }
+        return false;
+    }
     public void increaseBuffer(){
         T[] newArr = (T[]) new Object[arr.length*2];
         for(int i=0; i< arr.length; i++){
