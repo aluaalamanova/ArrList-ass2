@@ -33,6 +33,14 @@ public class MyArrayList<T> {
         checkIndex(index);
         return arr[index];
     }
+    public int indexOf(Object o){
+        for (int i = 0; i<size; i++){
+            if (arr[i]==o){
+                   return i;
+            }
+        }
+        return -1;
+    }
 
     public int size() {
         return size;
