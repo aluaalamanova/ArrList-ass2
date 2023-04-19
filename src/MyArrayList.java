@@ -78,6 +78,18 @@ public class MyArrayList<T> {
         this.arr = (T[]) new Object[5];
         this.size = 0;
     }
+    public boolean remove(T item) {
+        int index = indexOf(item);
+        if (index == -1) {
+            return false;
+        }
+        for (int i = index; i < size-1; i++) {
+            arr[i] = arr[i+1];
+        }
+        arr[size-1] = null;
+        size--;
+        return true;
+    }
 
     public void remove(int index){
         checkIndex(index);
@@ -86,6 +98,7 @@ public class MyArrayList<T> {
         }
         size--;
     }
+
     public void sort() {
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - i - 1; j++) {
