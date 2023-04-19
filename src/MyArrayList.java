@@ -13,6 +13,20 @@ public class MyArrayList<T> {
         arr[size++] = element;
     }
 
+    public void add(T element, int index){
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (size==arr.length){
+            increaseBuffer();
+        }
+        for (int i = size; i > index; i--) {
+            arr[i] = arr[i-1];
+        }
+        arr[index] = element;
+        size++;
+    }
+
     public boolean contains(Object o) {
         for (int i = 0; i < size; i++) {
             if (arr[i] == o) {

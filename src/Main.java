@@ -3,15 +3,13 @@ public class Main {
     public static void main(String[] args) {
         MyArrayList<Integer> list= new MyArrayList<>();
         MyLinkedList<Integer> lis = new MyLinkedList<>();
-        lis.add(9);
-        lis.add(4);
-        lis.add(1);
-        lis.add(6);
-        for (int i=0; i<lis.size();i++) {
-            System.out.println(lis.get(i) + " ");
+        list.add(6);
+        list.add(4,0);
+        list.add(3,1);
+        list.add(3,2);
+        for (int i=0; i<list.size();i++) {
+            System.out.println(list.get(i) + " ");
         }
-        System.out.println(list.lastIndexOf(6));
-        System.out.println(lis.contains(4));
 
 
     }
