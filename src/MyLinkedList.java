@@ -6,6 +6,19 @@ public class MyLinkedList<T> {
     MyLinkedList() {
 
     }
+    public int size() {
+        return size;
+    }
+    public boolean contains(Object o) {
+        MyNode<T> current = head;
+        while (current != null) {
+            if (current.data==o) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
     public void add (T newItem){
         MyNode<T> newNode = new MyNode<>(newItem);
         if (head == null) {
@@ -16,6 +29,7 @@ public class MyLinkedList<T> {
         }
         size++;
     }
+
     public T get( int index){
         MyNode<T> current = head;
         for (int i = 0; i < index; i++) {
@@ -24,6 +38,11 @@ public class MyLinkedList<T> {
         return current.data;
     }
 
+    public void checkIndex(int index){
+        if(index < 0 || index>=size){
+            throw new IndexOutOfBoundsException();
+        }
+    }
 
     private static class MyNode<E> {
         E data;
@@ -32,9 +51,6 @@ public class MyLinkedList<T> {
         MyNode(E data) {
             this.data = data;
         }
-    }
-    public int size() {
-        return size;
     }
 
 

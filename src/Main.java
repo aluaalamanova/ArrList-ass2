@@ -11,7 +11,7 @@ public class Main {
             System.out.println(lis.get(i) + " ");
         }
         System.out.println(list.lastIndexOf(6));
-        System.out.println(list.indexOf(6));
+        System.out.println(lis.contains(4));
 
 
     }
