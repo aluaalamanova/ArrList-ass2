@@ -7,7 +7,7 @@ public class Main {
         lis.add(3);
         lis.add(8);
 
-        System.out.println(lis.indexOf(8));
+        System.out.println(lis.lastIndexOf(8));
 
     }
 }
