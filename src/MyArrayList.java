@@ -1,4 +1,4 @@
-public class MyArrayList<T> {
+public class MyArrayList<T> implements MyList<T> {
     private T[] arr;
     private int size;
 
@@ -6,13 +6,14 @@ public class MyArrayList<T> {
         this.arr = (T[]) new Object[5];
         this.size = 0;
     }
+    @Override
     public void  add(T element){
         if(size == arr.length){
             increaseBuffer();
         }
         arr[size++] = element;
     }
-
+    @Override
     public void add(T element, int index){
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
@@ -26,7 +27,7 @@ public class MyArrayList<T> {
         arr[index] = element;
         size++;
     }
-
+    @Override
     public boolean contains(Object o) {
         for (int i = 0; i < size; i++) {
             if (arr[i] == o) {
@@ -42,11 +43,12 @@ public class MyArrayList<T> {
         }
         arr = newArr;
     }
-
+    @Override
     public T get(int index) {
         checkIndex(index);
         return arr[index];
     }
+    @Override
     public int indexOf(Object o){
         for (int i = 0; i<size; i++){
             if (arr[i]==o){
@@ -55,6 +57,7 @@ public class MyArrayList<T> {
         }
         return -1;
     }
+    @Override
     public int lastIndexOf(Object o) {
         if (o == null) {
             for (int i = size - 1; i >= 0; i--) {
@@ -71,13 +74,16 @@ public class MyArrayList<T> {
         }
         return -1;
     }
+    @Override
     public int size() {
         return size;
     }
+    @Override
     public void clear(){
         this.arr = (T[]) new Object[5];
         this.size = 0;
     }
+    @Override
     public boolean remove(T item) {
         int index = indexOf(item);
         if (index == -1) {
@@ -90,15 +96,16 @@ public class MyArrayList<T> {
         size--;
         return true;
     }
-
-    public void remove(int index){
+    @Override
+    public T remove(int index){
         checkIndex(index);
         for(int i= index + 1; i<size; i++){
             arr[i-1] = arr[i];
         }
         size--;
+        return null;
     }
-
+    @Override
     public void sort() {
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - i - 1; j++) {
