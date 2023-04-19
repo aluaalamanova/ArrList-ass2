@@ -6,42 +6,52 @@ public class MyLinkedList<T> implements MyList<T> {
     MyLinkedList() {
 
     }
+
+    // Returns the number of elements in the list.
     @Override
     public int size() {
         return size;
     }
+
+    // Returns true if the list contains the specified element, false otherwise.
     @Override
     public boolean contains(Object o) {
         MyNode<T> current = head;
         while (current != null) {
-            if (current.data==o) {
+            if (current.data == o) {
                 return true;
             }
             current = current.next;
         }
         return false;
     }
+
+    // Adds the specified element to the end of the list.
     @Override
-    public void add (T newItem){
+    public void add(T newItem) {
         MyNode<T> newNode = new MyNode<>(newItem);
         if (head == null) {
             head = tail = newNode;
-        } else{
+        } else {
             tail.next = newNode;
-            tail=newNode;
+            tail = newNode;
         }
         size++;
     }
+
+    // Returns the element at the specified position in the list.
     @Override
-    public T get(int index){
+    public T get(int index) {
         MyNode<T> current = head;
         for (int i = 0; i < index; i++) {
             current = current.next;
         }
         return current.data;
     }
+
+    // Inserts the specified element at the specified position in the list.
     @Override
-    public void add(T item, int index){
+    public void add(T item, int index) {
         MyNode<T> newNode = new MyNode<>(item);
         if (index == 0) {
             newNode.next = head;
@@ -53,18 +63,21 @@ public class MyLinkedList<T> implements MyList<T> {
             tail.next = newNode;
             tail = newNode;
         } else {
-            MyNode<T> prev = new MyNode<>(get(index-1));
+            MyNode<T> prev = new MyNode<>(get(index - 1));
             newNode.next = prev.next;
             prev.next = newNode;
         }
         size++;
     }
 
-    public void checkIndex(int index){
-        if(index < 0 || index>=size){
+    // Checks that the specified index is valid, and throws an exception if not.
+    public void checkIndex(int index) {
+        if (index < 0 || index >= size) {
             throw new IndexOutOfBoundsException();
         }
     }
+
+    // Removes the first occurrence of the specified element from the list, if it exists.
     @Override
     public boolean remove(T item) {
         MyNode<T> current = head;
@@ -91,6 +104,8 @@ public class MyLinkedList<T> implements MyList<T> {
         }
         return check;
     }
+
+    // Removes the element at the specified position in the list, and returns it.
     @Override
     public T remove(int index) {
         checkIndex(index);
@@ -110,15 +125,18 @@ public class MyLinkedList<T> implements MyList<T> {
         }
         size--;
         return current.data;
-        }
+    }
 
-
+    // This method clears the linked list by setting the size to 0, and the head and tail to null.
     @Override
-    public void clear(){
+    public void clear() {
         size = 0;
         head = null;
         tail = null;
     }
+
+    // This method finds and returns the index of the first occurrence of the specified object in the linked list.
+// If the object is not found, it returns -1.
     @Override
     public int indexOf(Object o) {
         int index = 0;
@@ -133,6 +151,8 @@ public class MyLinkedList<T> implements MyList<T> {
         return -1;
     }
 
+    // This method finds and returns the index of the last occurrence of the specified object in the linked list.
+// If the object is not found, it returns -1.
     @Override
     public int lastIndexOf(Object o) {
         MyNode<T> current = head;
@@ -147,6 +167,8 @@ public class MyLinkedList<T> implements MyList<T> {
         }
         return index;
     }
+
+    // This method sorts the linked list in ascending order, assuming that the objects in the linked list implement the Comparable interface.
     @Override
     public void sort() {
         MyNode<T> current = head;
@@ -154,7 +176,7 @@ public class MyLinkedList<T> implements MyList<T> {
             MyNode<T> min = current;
             MyNode<T> inner = current.next;
             while (inner != null) {
-                if (((Comparable<T>)inner.data).compareTo(min.data) < 0) {
+                if (((Comparable<T>) inner.data).compareTo(min.data) < 0) {
                     min = inner;
                 }
                 inner = inner.next;
@@ -168,6 +190,7 @@ public class MyLinkedList<T> implements MyList<T> {
         }
     }
 
+    // This is a class that represents a node in the linked list.
     private static class MyNode<E> {
         E data;
         MyNode<E> next;
@@ -176,6 +199,5 @@ public class MyLinkedList<T> implements MyList<T> {
             this.data = data;
         }
     }
-
-
 }
+
