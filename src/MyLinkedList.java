@@ -148,9 +148,26 @@ public class MyLinkedList<T> implements MyList<T> {
         return index;
     }
     @Override
-    public void sort(){
-
+    public void sort() {
+        MyNode<T> current = head;
+        while (current != null) {
+            MyNode<T> min = current;
+            MyNode<T> inner = current.next;
+            while (inner != null) {
+                if (((Comparable<T>)inner.data).compareTo(min.data) < 0) {
+                    min = inner;
+                }
+                inner = inner.next;
+            }
+            if (min != current) {
+                T temp = current.data;
+                current.data = min.data;
+                min.data = temp;
+            }
+            current = current.next;
+        }
     }
+
     private static class MyNode<E> {
         E data;
         MyNode<E> next;
