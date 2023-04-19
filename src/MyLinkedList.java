@@ -115,7 +115,9 @@ public class MyLinkedList<T> implements MyList<T> {
 
     @Override
     public void clear(){
-
+        size = 0;
+        head = null;
+        tail = null;
     }
     @Override
     public int indexOf(Object o){
