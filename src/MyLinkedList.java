@@ -120,9 +120,19 @@ public class MyLinkedList<T> implements MyList<T> {
         tail = null;
     }
     @Override
-    public int indexOf(Object o){
-        return 0;
+    public int indexOf(Object o) {
+        int index = 0;
+        MyNode<T> current = head;
+        while (current != null) {
+            if (current.data.equals(o)) {
+                return index;
+            }
+            current = current.next;
+            index++;
+        }
+        return -1;
     }
+
     @Override
     public int lastIndexOf(Object o){
         return 0;
