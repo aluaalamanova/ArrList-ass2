@@ -41,7 +41,22 @@ public class MyArrayList<T> {
         }
         return -1;
     }
-
+    public int lastIndexOf(Object o) {
+        if (o == null) {
+            for (int i = size - 1; i >= 0; i--) {
+                if (arr[i] == null) {
+                    return i;
+                }
+            }
+        } else {
+            for (int i = size - 1; i >= 0; i--) {
+                if (o.equals(arr[i])) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
     public int size() {
         return size;
     }
@@ -57,6 +72,21 @@ public class MyArrayList<T> {
         }
         size--;
     }
+    public void sort() {
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                Comparable<T> a = (Comparable<T>) arr[j];
+                Comparable<T> b = (Comparable<T>) arr[j + 1];
+                if (a.compareTo((T) b) > 0) {
+                    Object temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = (T)temp;
+                }
+            }
+        }
+    }
+
+
     public void checkIndex(int index){
         if(index < 0 || index>=size){
             throw new IndexOutOfBoundsException();

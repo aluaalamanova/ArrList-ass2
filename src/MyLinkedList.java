@@ -23,6 +23,8 @@ public class MyLinkedList<T> {
         }
         return current.data;
     }
+
+
     private static class MyNode<E> {
         E data;
         MyNode<E> next;
@@ -31,9 +33,9 @@ public class MyLinkedList<T> {
             this.data = data;
         }
     }
-    public int getsize() {
-        this.size = size;
+    public int size() {
         return size;
     }
+
 
 }

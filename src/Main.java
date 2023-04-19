@@ -1,15 +1,17 @@
-import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        MyLinkedList<String> list= new MyLinkedList<>();
-
-        list.add("alua");
-        list.add("daniya");
-        list.add("elya");
-        for (int i=0; i<list.getsize();i++){
-            System.out.println(list.get(i) + " ");
+        MyArrayList<Integer> list= new MyArrayList<>();
+        MyLinkedList<Integer> lis = new MyLinkedList<>();
+        lis.add(9);
+        lis.add(4);
+        lis.add(1);
+        lis.add(6);
+        for (int i=0; i<lis.size();i++) {
+            System.out.println(lis.get(i) + " ");
         }
-
+        System.out.println(list.lastIndexOf(6));
+        System.out.println(list.indexOf(6));
 
 
     }
