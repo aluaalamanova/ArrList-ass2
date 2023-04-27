@@ -164,6 +164,21 @@ public class MyArrayList<T> implements MyList<T> {
             }
         }
     }
+    public void sortSubArr( int m, int n){
+        int subSize=n-m;
+       for (int i=m-1; i<subSize-1; i++){
+           for (int j=m-1; j<subSize-i-1; j++){
+               Comparable<T> s =(Comparable<T>) arr[j];
+               Comparable<T> k =(Comparable<T>) arr[ j +1];
+             if (s.compareTo((T) k)>0){
+                Object temp = arr[j];
+                arr[j]= arr[j+1];
+                arr[j+1]= (T) temp;
+             }
+           }
+       }
+
+    }
 
     public void checkIndex(int index) {
         // Check if index is within the bounds of the list, and throw an exception if it is not
