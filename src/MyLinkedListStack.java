@@ -7,5 +7,7 @@ public class MyLinkedListStack<T>{
     public void push (T element){
         linkedList.add(element);
     }
-
+    public T pop(){
+        return linkedList.remove(linkedList.size() - 1);
+    }
 }
