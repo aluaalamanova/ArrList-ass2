@@ -13,6 +13,12 @@ public class MyLinkedListStack<T>{
         }
         return linkedList.remove(size() - 1);
     }
+    public T peek() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return linkedList.get(size()-1);
+    }
     public boolean isEmpty(){
         if (linkedList.size()==0){
             return true;
@@ -22,7 +28,5 @@ public class MyLinkedListStack<T>{
     public int size(){
         return linkedList.size();
     }
-    public T get(int index){
-        return linkedList.get(index);
-    }
+
 }
