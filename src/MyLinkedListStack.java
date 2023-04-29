@@ -10,4 +10,10 @@ public class MyLinkedListStack<T>{
     public T pop(){
         return linkedList.remove(linkedList.size() - 1);
     }
+    public boolean isEmpty(){
+        if (linkedList.size()==0){
+            return true;
+        }
+        return false;
+    }
 }
