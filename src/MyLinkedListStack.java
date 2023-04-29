@@ -4,4 +4,8 @@ public class MyLinkedListStack<T>{
     public MyLinkedListStack() {
         linkedList= new MyLinkedList<T>();
     }
+    public void push (T element){
+        linkedList.add(element);
+    }
+
 }
