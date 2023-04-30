@@ -19,5 +19,7 @@ public class MyArrayListQueue<T> {
         }
         return false;
     }
-
+    public int size(){
+        return list.size();
+    }
 }
