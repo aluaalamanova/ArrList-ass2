@@ -14,7 +14,7 @@ public class MyArrayListQueue<T> {
         return list.get(0);
     }
     public boolean isEmpty(){
-        if (list.size()==0){
+        if (size()==0){
             return true;
         }
         return false;
