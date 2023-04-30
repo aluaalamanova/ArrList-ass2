@@ -406,3 +406,32 @@ sort() : void : Sorts the linked list in ascending order, assuming that the obje
   ``` public MyLinkedListStack() {
         linkedList= new MyLinkedList<>();
     } ```
+### This method pushes an element to the top of the stack by adding it to the end of the linked list by using linkedList class:
+  ``` public void push (T element){
+        linkedList.add(element);
+    } ```
+### This method removes and returns the top element of the stack. It first checks if the stack is empty and throw exception if it is. Otherwise itworks  as usual.
+  ``` public T pop(){
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return linkedList.remove(size() - 1);
+    } ```
+### This method returns the top element of the stack without removing it. It first checks if the stack is empty using the isEMpty method, then throw exception if it's true:
+   public T peek() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return linkedList.get(size()-1);
+    }
+### This method checks if the stack is empty by calling the size() method of the linked list and returning true if the size is 0, otherwise false:
+  public boolean isEmpty(){
+        if (linkedList.size()==0){
+            return true;
+        }
+        return false;
+    }
+###  This method returns the size of the linked list:
+  public int size(){
+        return linkedList.size();
+    }
