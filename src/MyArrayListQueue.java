@@ -14,6 +14,9 @@ public class MyArrayListQueue<T> {
         return list.remove(0);
     }
     public T peek(){
+        if (isEmpty()){
+            throw new NoSuchElementException();
+        }
         return list.get(0);
     }
     public boolean isEmpty(){
