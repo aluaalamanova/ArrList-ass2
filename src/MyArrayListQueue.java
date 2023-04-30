@@ -7,4 +7,7 @@ public class MyArrayListQueue<T> {
     public void enqueue(T element){
         list.add(element);
     }
+    public T dequeue(){
+        return list.remove(0);
+    }
 }
