@@ -1,4 +1,4 @@
-# Ass2-arrList
+# Ass2-arrList and Assignment3
 ### MyArrayList class
 This class is an implementation of the MyList<T> interface, which provides a list data structure that can hold elements of any type T. The class uses an array to store the elements and dynamically increases the size of the array as needed.
 ### Fields
@@ -393,3 +393,10 @@ sort() : void : Sorts the linked list in ascending order, assuming that the obje
     int lastIndexOf(Object o);
     void sort();
 }  
+  
+### MyLinkedListStack and MyArrayListQueue implementation
+### MyLinkedListStack:
+### This statement imports the EmptyStackException class, which will be used to throw an exception:
+  ``` import java.util.EmptyStackException; ```
+### Declaring a generic class named MyLinkedListStack, which implements a stack using a linked list:
+  ``` public class MyLinkedListStack<T> ```
