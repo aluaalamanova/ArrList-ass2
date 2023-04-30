@@ -8,6 +8,9 @@ public class MyArrayListQueue<T> {
         list.add(element);
     }
     public T dequeue(){
+        if (isEmpty()){
+            throw new NoSuchElementException();
+        }
         return list.remove(0);
     }
     public T peek(){
