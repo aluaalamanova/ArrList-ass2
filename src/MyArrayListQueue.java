@@ -10,4 +10,7 @@ public class MyArrayListQueue<T> {
     public T dequeue(){
         return list.remove(0);
     }
+    public T peek(){
+        return list.get(0);
+    }
 }
