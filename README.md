@@ -400,3 +400,9 @@ sort() : void : Sorts the linked list in ascending order, assuming that the obje
   ``` import java.util.EmptyStackException; ```
 ### Declaring a generic class named MyLinkedListStack, which implements a stack using a linked list:
   ``` public class MyLinkedListStack<T> ```
+### Declaring a private instance variable of type MyLinkedList<T>, which will hold the elements of the stack:
+ ``` private MyLinkedList<T> linkedList; ```
+### Initializing the linkedList instance variable with an empty MyLinkedList:
+  ``` public MyLinkedListStack() {
+        linkedList= new MyLinkedList<>();
+    } ```
