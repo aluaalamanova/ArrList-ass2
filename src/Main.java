@@ -1,17 +1,14 @@
 
 public class Main {
     public static void main(String[] args) {
-        MyArrayList<Integer> list= new MyArrayList<>();
-        MyLinkedList<Integer> lis = new MyLinkedList<>();
-        lis.add(2);
-        lis.add(10);
-        lis.add(8);
-        lis.add(5);
-        lis.sort();
-        for (int i=0; i<lis.size();i++) {
-            System.out.println(lis.get(i) + " ");
-        }
-
-
+        MyArrayListQueue<Integer> list = new MyArrayListQueue<>();
+        list.enqueue(6);
+        list.enqueue(9);
+        list.enqueue(3);
+        list.enqueue(5);
+        list.enqueue(8);
+        System.out.println(list.peek());
+        list.dequeue();
+        System.out.println(list.peek());
     }
 }

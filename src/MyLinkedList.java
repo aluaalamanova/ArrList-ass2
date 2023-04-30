@@ -189,6 +189,7 @@ public class MyLinkedList<T> implements MyList<T> {
             current = current.next;
         }
     }
+    
 
     // This is a class that represents a node in the linked list.
     private static class MyNode<E> {
