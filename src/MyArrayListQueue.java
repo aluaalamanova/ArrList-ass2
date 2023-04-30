@@ -1,5 +1,4 @@
 import java.util.NoSuchElementException;
-public class MyArrayListQueue {
-
-
+public class MyArrayListQueue<T> {
+    private MyArrayList<T> list;
 }
