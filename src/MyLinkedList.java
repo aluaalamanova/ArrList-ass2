@@ -200,8 +200,21 @@ public class MyLinkedList<T> implements MyList<T> {
         }
         size++;
     }
-
-
+    public void addLast(T element) {
+        add(element);
+    }
+    public T removeFirst() {
+        if (head == null) {
+            throw new NoSuchElementException();
+        }
+        T data = head.data;
+        head = head.next;
+        size--;
+        if (head == null) {
+            tail = null;
+        }
+        return data;
+    }
 
 
     // This is a class that represents a node in the linked list.
