@@ -9,7 +9,7 @@ public class MyLinkedListStack<T>{
      * @param element the element to be added to the stack.
      */
     public void push(T element) {
-        linkedList.add(element);
+        linkedList.addFirst(element);
     }
 
     /**
@@ -21,7 +21,7 @@ public class MyLinkedListStack<T>{
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return linkedList.remove(size() - 1);
+        return linkedList.removeFirst();
     }
 
     /**
@@ -33,7 +33,7 @@ public class MyLinkedListStack<T>{
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return linkedList.get(size() - 1);
+        return linkedList.getFirst();
     }
 
     /**
@@ -41,7 +41,10 @@ public class MyLinkedListStack<T>{
      * @return true if the stack is empty, false otherwise.
      */
     public boolean isEmpty() {
-        return linkedList.size() == 0;
+        if (size() == 0){
+            return true;
+        }
+        return false;
     }
 
     /**
