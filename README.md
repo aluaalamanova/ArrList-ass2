@@ -516,4 +516,99 @@ public T peek(){
  public int size(){
         return list.size();
     }
-    ```
+```
+</details>
+
+<details>
+<summary>MyArrayListStack</summary>
+    
+### Methods
+### push(T element)
+Adds an element to the top of the stack:
+``` 
+public void push(T element) {
+        list.add(element);
+    }
+```
+### pop()
+Removes and returns the top element from the stack. Throws an EmptyStackException if the stack is empty:
+```
+ public T pop() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return list.remove(size() - 1);
+    }
+```
+### peek()
+Returns the top element from the stack without removing it. Throws an EmptyStackException if the stack is empty:
+```
+public T peek() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return list.get(size() - 1);
+    }
+```
+### isEmpty()
+Returns true if the stack is empty, false otherwise:
+```
+ public boolean isEmpty() {
+        if (size()==0){
+            return true;
+        }
+        return false;
+    }
+```
+### size()
+Returns the number of elements in the stack:
+```
+public int size(){
+        return list.size();
+    }
+```
+</details>
+
+<details>
+<summary>MyLinkedListQueue</summary>
+
+### enqueue(T element): Adds the element to the back of the queue:
+```
+public void enqueue(T element) {
+        list.addLast(element);
+    }
+```
+### dequeue(): Removes and returns the element at the front of the queue. Throws a NoSuchElementException if the queue is empty:
+```
+ public T dequeue() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return list.removeFirst();
+    }
+```
+### peek(): Returns the element at the front of the queue without removing it. Throws a NoSuchElementException if the queue is empty:
+```
+ public T peek() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        return list.getFirst();
+    }
+```
+### isEmpty(): Returns true if the queue is empty, otherwise returns false:
+```
+ public boolean isEmpty() {
+        if (size()==0){
+            return true;
+        }
+        return false;
+    }
+```
+### size(): Returns the number of elements in the queue:
+```
+public int size() {
+        return list.size();
+    }
+```
+</details>
