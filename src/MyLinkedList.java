@@ -215,6 +215,12 @@ public class MyLinkedList<T> implements MyList<T> {
         }
         return data;
     }
+    public T getFirst() {
+        if (head == null) {
+            throw new NoSuchElementException();
+        }
+        return head.data;
+    }
 
 
     // This is a class that represents a node in the linked list.
