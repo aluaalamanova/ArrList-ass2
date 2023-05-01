@@ -405,8 +405,10 @@ sort() : void : Sorts the linked list in ascending order, assuming that the obje
 <details>
 
 <summary>MyLinkedListStack</summary>
+
 ### This statement imports the EmptyStackException class, which will be used to throw an exception:
   ``` import java.util.EmptyStackException; ```
+
 ### Declaring a generic class named MyLinkedListStack, which implements a stack using a linked list:
  
   ``` public class MyLinkedListStack<T> ```
@@ -461,3 +463,33 @@ sort() : void : Sorts the linked list in ascending order, assuming that the obje
   ```
   </details>
 
+<details>
+<summary>MyArrayListQueue</summary>
+
+### This line imports the NoSuchElementException class from the java.util package. This class is used to throw an exception if an operation is performed on an empty queue:
+``` import java.util.NoSuchElementException; ```
+### This line declares the class MyArrayListQueue, which is a generic class that can work with any type T: 
+``` public class MyArrayListQueue<T> { ```
+### This line declares a private instance variable list of type MyArrayList<T>:
+``` private MyArrayList<T> list; ```
+### This is the constructor for the MyArrayListQueue class. It initializes the list instance variable by creating a new empty MyArrayList:
+```
+public MyArrayListQueue() {
+        list = new MyArrayList<>();
+    }
+    ```
+### This method adds an element to the back of the queue by calling the add method of the list instance variable:
+``` 
+public void enqueue(T element) { 
+        list.add(element); 
+    }
+    ```
+### This method removes and returns the front element of the queue by calling the remove method of the list instance variable. It first checks if the queue is empty, and if it is, it throws a NoSuchElementException:
+```
+public T dequeue(){
+        if (isEmpty()){
+            throw new NoSuchElementException();
+        }
+        return list.remove(0);
+    }
+```
