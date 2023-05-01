@@ -1,6 +1,7 @@
-# Ass2-arrList
-### MyArrayList class
-This class is an implementation of the MyList<T> interface, which provides a list data structure that can hold elements of any type T. The class uses an array to store the elements and dynamically increases the size of the array as needed.
+# Ass2-arrList and Assignment3
+<details>
+<summary>MyArrayList class</summary>
+### This class is an implementation of the MyList<T> interface, which provides a list data structure that can hold elements of any type T. The class uses an array to store the elements and dynamically increases the size of the array as needed.
 ### Fields
   T[] arr: an array to store elements.
   
@@ -29,7 +30,7 @@ T remove(int index): removes the element at a specific index.
 void increaseBuffer(): increases the buffer size of the array.
   
   ### Solution
-    
+   ``` 
     public class MyArrayList<T> implements MyList<T> {
     private T[] arr;
     private int size;
@@ -159,8 +160,11 @@ void increaseBuffer(): increases the buffer size of the array.
         }
     }
 }
-  
-  ### MylinkedList class
+```
+</details>
+
+<details>
+  <summary>MylinkedList class</summary>
   MyLinkedList is an implementation of the MyList interface, which represents a singly linked list that can store elements of any type T. It provides methods to add, remove, and retrieve elements from the list, as well as sort the list in ascending order.
   ### Fields
   head: A reference to the first node in the linked list.
@@ -192,6 +196,7 @@ lastIndexOf(Object o) : int : Finds and returns the index of the last occurrence
 sort() : void : Sorts the linked list in ascending order, assuming that the objects in the linked list implement the Comparable interface.
   
   ### Solution
+  ```
     public class MyLinkedList<T> implements MyList<T> {
     private MyNode<T> head;
     private MyNode<T> tail;
@@ -373,13 +378,14 @@ sort() : void : Sorts the linked list in ascending order, assuming that the obje
 
 
 }
-  
-  
+  ```
+  </details>
+
   
   ### MyList Interface which was implemented
   
     
-  
+  ```
     public interface MyList<T> {
     int size();
     boolean contains(Object o);
@@ -393,3 +399,121 @@ sort() : void : Sorts the linked list in ascending order, assuming that the obje
     int lastIndexOf(Object o);
     void sort();
 }  
+```
+# Assignment 3
+### MyLinkedListStack and MyArrayListQueue implementation
+<details>
+
+<summary>MyLinkedListStack</summary>
+
+### This statement imports the EmptyStackException class, which will be used to throw an exception:
+  ``` import java.util.EmptyStackException; ```
+
+### Declaring a generic class named MyLinkedListStack, which implements a stack using a linked list:
+ 
+  ``` public class MyLinkedListStack<T> ```
+  
+### Declaring a private instance variable of type MyLinkedList<T>, which will hold the elements of the stack:
+ ``` private MyLinkedList<T> linkedList; ```
+### Initializing the linkedList instance variable with an empty MyLinkedList:
+ ``` 
+  public MyLinkedListStack() {
+  linkedList = new MyLinkedList<>();
+    }
+  ```
+  
+### This method pushes an element to the top of the stack by adding it to the end of the linked list by using linkedList class:
+  ``` 
+  public void push (T element){
+        linkedList.add(element);
+    } 
+  ```
+### This method removes and returns the top element of the stack. It first checks if the stack is empty and throw exception if it is. Otherwise itworks  as usual:
+  ``` 
+  public T pop(){
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return linkedList.remove(size() - 1);
+    }
+  ```
+### This method returns the top element of the stack without removing it. It first checks if the stack is empty using the isEMpty method, then throw exception if it's true:
+   ```
+  public T peek() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return linkedList.get(size()-1);
+    }
+  ```
+### This method checks if the stack is empty by calling the size() method of the linked list and returning true if the size is 0, otherwise false:
+  ```
+  public boolean isEmpty(){
+        if (linkedList.size()==0){
+            return true;
+        }
+        return false;
+    }
+  ```
+###  This method returns the size of the linked list:
+  ```
+  public int size(){
+        return linkedList.size();
+    }
+  ```
+  </details>
+
+<details>
+<summary>MyArrayListQueue</summary>
+
+### This line imports the NoSuchElementException class from the java.util package. This class is used to throw an exception if an operation is performed on an empty queue:
+``` import java.util.NoSuchElementException; ```
+### This line declares the class MyArrayListQueue, which is a generic class that can work with any type T: 
+``` public class MyArrayListQueue<T> { ```
+### This line declares a private instance variable list of type MyArrayList<T>:
+``` private MyArrayList<T> list; ```
+### This is the constructor for the MyArrayListQueue class. It initializes the list instance variable by creating a new empty MyArrayList:
+```
+public MyArrayListQueue() {
+        list = new MyArrayList<>();
+    }
+    ```
+### This method adds an element to the back of the queue by calling the add method of the list instance variable:
+``` 
+public void enqueue(T element) { 
+        list.add(element); 
+    }
+    ```
+### This method removes and returns the front element of the queue by calling the remove method of the list instance variable. It first checks if the queue is empty, and if it is, it throws a NoSuchElementException:
+```
+public T dequeue(){
+        if (isEmpty()){
+            throw new NoSuchElementException();
+        }
+        return list.remove(0);
+    }
+```
+###  This method returns the front element of the queue without removing it by calling the get method of the list instance variable. It first checks if the queue is empty, and if it is, it throws a NoSuchElementException:
+```
+public T peek(){
+        if (isEmpty()){
+            throw new NoSuchElementException();
+        }
+        return list.get(0);
+    }
+```
+### This method checks if the queue is empty by calling the size method of the list instance variable. If the size is 0, it returns true; otherwise, it returns false: 
+```
+  public boolean isEmpty(){
+        if (size()==0){
+            return true;
+        }
+        return false;
+    }
+```
+### This method returns the number of elements in the queue by calling the size method of the list instance variable:
+```
+ public int size(){
+        return list.size();
+    }
+    ```
