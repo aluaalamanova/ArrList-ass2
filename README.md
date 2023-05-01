@@ -511,3 +511,9 @@ public T peek(){
         return false;
     }
 ```
+### This method returns the number of elements in the queue by calling the size method of the list instance variable:
+```
+ public int size(){
+        return list.size();
+    }
+    ```
