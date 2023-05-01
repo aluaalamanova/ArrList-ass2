@@ -493,3 +493,12 @@ public T dequeue(){
         return list.remove(0);
     }
 ```
+###  This method returns the front element of the queue without removing it by calling the get method of the list instance variable. It first checks if the queue is empty, and if it is, it throws a NoSuchElementException:
+```
+public T peek(){
+        if (isEmpty()){
+            throw new NoSuchElementException();
+        }
+        return list.get(0);
+    }
+```
