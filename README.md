@@ -1,7 +1,7 @@
 # Ass2-arrList and Assignment3
-### *Documentation of ass3 is below*
-### MyArrayList class
-This class is an implementation of the MyList<T> interface, which provides a list data structure that can hold elements of any type T. The class uses an array to store the elements and dynamically increases the size of the array as needed.
+<details>
+<summary>MyArrayList class</summary>
+### This class is an implementation of the MyList<T> interface, which provides a list data structure that can hold elements of any type T. The class uses an array to store the elements and dynamically increases the size of the array as needed.
 ### Fields
   T[] arr: an array to store elements.
   
@@ -30,7 +30,7 @@ T remove(int index): removes the element at a specific index.
 void increaseBuffer(): increases the buffer size of the array.
   
   ### Solution
-    
+   ``` 
     public class MyArrayList<T> implements MyList<T> {
     private T[] arr;
     private int size;
@@ -160,8 +160,11 @@ void increaseBuffer(): increases the buffer size of the array.
         }
     }
 }
-  
-  ### MylinkedList class
+```
+</details>
+
+<details>
+  <summary>MylinkedList class</summary>
   MyLinkedList is an implementation of the MyList interface, which represents a singly linked list that can store elements of any type T. It provides methods to add, remove, and retrieve elements from the list, as well as sort the list in ascending order.
   ### Fields
   head: A reference to the first node in the linked list.
@@ -193,6 +196,7 @@ lastIndexOf(Object o) : int : Finds and returns the index of the last occurrence
 sort() : void : Sorts the linked list in ascending order, assuming that the objects in the linked list implement the Comparable interface.
   
   ### Solution
+  ```
     public class MyLinkedList<T> implements MyList<T> {
     private MyNode<T> head;
     private MyNode<T> tail;
@@ -374,13 +378,14 @@ sort() : void : Sorts the linked list in ascending order, assuming that the obje
 
 
 }
-  
-  
+  ```
+  </details>
+
   
   ### MyList Interface which was implemented
   
     
-  
+  ```
     public interface MyList<T> {
     int size();
     boolean contains(Object o);
@@ -394,9 +399,12 @@ sort() : void : Sorts the linked list in ascending order, assuming that the obje
     int lastIndexOf(Object o);
     void sort();
 }  
+```
 # Assignment 3
 ### MyLinkedListStack and MyArrayListQueue implementation
-### MyLinkedListStack:
+<details>
+
+<summary>MyLinkedListStack</summary>
 ### This statement imports the EmptyStackException class, which will be used to throw an exception:
   ``` import java.util.EmptyStackException; ```
 ### Declaring a generic class named MyLinkedListStack, which implements a stack using a linked list:
@@ -451,3 +459,5 @@ sort() : void : Sorts the linked list in ascending order, assuming that the obje
         return linkedList.size();
     }
   ```
+  </details>
+
