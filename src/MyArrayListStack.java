@@ -13,18 +13,21 @@ public class MyArrayListStack<T> {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return list.remove(list.size() - 1);
+        return list.remove(size() - 1);
     }
     public T peek() {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return list.get(list.size() - 1);
+        return list.get(size() - 1);
     }
     public boolean isEmpty() {
-        if (list.size()==0){
+        if (size()==0){
             return true;
         }
         return false;
+    }
+    public int size(){
+        return list.size();
     }
 }
