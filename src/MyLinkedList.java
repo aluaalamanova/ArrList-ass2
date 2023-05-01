@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 public class MyLinkedList<T> implements MyList<T> {
     private MyNode<T> head;
     private MyNode<T> tail;
@@ -189,7 +190,19 @@ public class MyLinkedList<T> implements MyList<T> {
             current = current.next;
         }
     }
-    
+    public void addFirst(T item) {
+        MyNode<T> newNode = new MyNode<>(item);
+        if (head == null) {
+            head = tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        size++;
+    }
+
+
+
 
     // This is a class that represents a node in the linked list.
     private static class MyNode<E> {
