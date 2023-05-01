@@ -502,3 +502,12 @@ public T peek(){
         return list.get(0);
     }
 ```
+### This method checks if the queue is empty by calling the size method of the list instance variable. If the size is 0, it returns true; otherwise, it returns false: 
+```
+  public boolean isEmpty(){
+        if (size()==0){
+            return true;
+        }
+        return false;
+    }
+```
